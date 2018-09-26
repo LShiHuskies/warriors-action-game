@@ -208,8 +208,7 @@ class App extends Component {
         },
         body: JSON.stringify({username: this.state.username, password: this.state.password})
       })
-      .then( res => res.json())
-      .then(thing => console.log(thing))
+      .then( res => debugger)
       .then(player => this.handlePlayer(player) )
 
     } else if (event.target.value === "Create New Account") {
