@@ -209,8 +209,9 @@ class App extends Component {
         body: JSON.stringify({username: this.state.username, password: this.state.password})
       })
       .then( res => res.json())
+      .then(thing => console.log(thing))
       .then(player => this.handlePlayer(player) )
-      debugger;
+
     } else if (event.target.value === "Create New Account") {
       // need to make a fetch request in order to create a new account
       fetch(`https://warriorbackend.herokuapp.com/api/users`, {
@@ -245,7 +246,7 @@ class App extends Component {
 
 
   handlePlayer = (player) => {
-
+    console.log(player)
 
     if (player['errors'] === undefined) {
 
