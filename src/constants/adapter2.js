@@ -7,5 +7,5 @@ export default function createMovesTwo(body) {
   },
     body: JSON.stringify(body)
   };
-  return fetch(`http://${warriorbackend.herokuapp.com}:3000/api/move_twos`, config).then(r=> r.json())
+  return fetch(`http://warriorbackend.herokuapp.com/api/move_twos`, config).then(r=> r.json())
 }
