@@ -62,7 +62,7 @@ class App extends Component {
         type: action
       })
     };
-    fetch(`https://warriorbackend.herokuapp.com/api/moves`, config).then(r=> r.text())
+    fetch(`https://warriorbackend.herokuapp.com/api/moves`, config).then(r=> r.json())
 
   }
 
@@ -115,7 +115,7 @@ class App extends Component {
           type: action
         })
       };
-      fetch(`https://warriorbackend.herokuapp.com/api/moves`, config).then(r=> r.text())
+      fetch(`https://warriorbackend.herokuapp.com/api/moves`, config).then(r=> r.json())
 
       thirdCount = thirdCount + 1;
       scoreCount = 0;
@@ -136,7 +136,7 @@ class App extends Component {
           type: action
         })
       };
-      fetch(`https://warriorbackend.herokuapp.com/api/moves`, config).then(r=> r.text())
+      fetch(`https://warriorbackend.herokuapp.com/api/moves`, config).then(r=> r.json())
       scoreCount = 0;
 
     } else if ( this.props.enemyHealth < 1 && fifthCount < 1 && fourthCount === 1 && this.props.time < 59 ) {
@@ -154,7 +154,7 @@ class App extends Component {
             type: action
           })
         };
-        fetch(`https://warriorbackend.herokuapp.com/api/moves`, config).then(r=> r.text())
+        fetch(`https://warriorbackend.herokuapp.com/api/moves`, config).then(r=> r.json())
         scoreCount = 0;
 
     } else if ( this.props.time < 55 && scoreCount < 1 && this.state.gameOver !== true && this.state.login === true ) {
@@ -208,7 +208,7 @@ class App extends Component {
         },
         body: JSON.stringify({username: this.state.username, password: this.state.password})
       })
-      .then( res => res.text())
+      .then( res => res.json())
       .then(player => this.handlePlayer(player) )
 
     } else if (event.target.value === "Create New Account") {
@@ -220,7 +220,7 @@ class App extends Component {
         },
         body: JSON.stringify({username: this.state.username, password: this.state.password})
       })
-      .then( res => res.text())
+      .then( res => res.json())
       .then( this.handleTheResult )
 
     }

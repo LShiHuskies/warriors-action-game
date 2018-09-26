@@ -30,7 +30,7 @@ class Profile extends Component {
         {headers: {
           'Content-type': 'application/json',
           'Authorization': localStorage.getItem('token')
-        }}).then(r=>r.text()).then(gameInstances => this.iterateThroughGames(gameInstances))
+        }}).then(r=>r.json()).then(gameInstances => this.iterateThroughGames(gameInstances))
     } else {
       this.setState({
         games: null
@@ -113,7 +113,7 @@ class Profile extends Component {
         username: this.props.player
       })
     }
-    fetch(`https://warriorbackend.herokuapp.com/api/users/${this.props.player.id}`, config).then(r => r.text())
+    fetch(`https://warriorbackend.herokuapp.com/api/users/${this.props.player.id}`, config).then(r => r.json())
 
 
   }
@@ -150,7 +150,7 @@ class Profile extends Component {
             character: event.target.innerText
           })
         }
-        fetch(`https://warriorbackend.herokuapp.com/api/users/${this.props.player.id}`, config).then(r => r.text())
+        fetch(`https://warriorbackend.herokuapp.com/api/users/${this.props.player.id}`, config).then(r => r.json())
       } else if (event.target.innerText === 'Close Game Lobby') {
         window.location.reload()
       } else {
