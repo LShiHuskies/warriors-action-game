@@ -15,7 +15,7 @@ class GameLobby extends Component {
           player: this.props.player
         })
       }
-      fetch(`http://${window.location.hostname}:3000/api/games/`, config).then(r => r.json())
+      fetch(`https://warriorbackend.herokuapp.com/api/games/`, config).then(r => r.json())
     }
 
   render() {

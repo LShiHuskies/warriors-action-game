@@ -7,5 +7,5 @@ export default function createMove(body) {
   },
     body: JSON.stringify(body)
   };
-  return fetch(`http://${window.location.hostname}:3000/api/moves`, config).then(r=> r.json())
+  return fetch(`https://warriorbackend.herokuapp.com/api/moves`, config).then(r=> r.json())
 }
