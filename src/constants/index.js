@@ -1,1 +1,1 @@
-export const API_WS_ROOT = `ws://https://warriorbackend.herokuapp.com/cable`;
+export const API_WS_ROOT = `wss://warriorbackend.herokuapp.com/cable`;
