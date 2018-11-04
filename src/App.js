@@ -198,7 +198,8 @@ class App extends Component {
 
 
     if (event.target.value === "Login") {
-
+      console.log(this.state.username);
+      console.log(this.state.password);
       // trying to the link the back end with the front end--
 
       fetch(`https://warriorbackend.herokuapp.com/api/sessions`, {
@@ -245,7 +246,6 @@ class App extends Component {
 
 
   handlePlayer = (player) => {
-    debugger;
 
     if (player['errors'] === undefined) {
       localStorage.setItem('token', player.token)
