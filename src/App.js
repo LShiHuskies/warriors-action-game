@@ -200,6 +200,7 @@ class App extends Component {
     if (event.target.value === "Login") {
       // trying to the link the back end with the front end--
 
+
       fetch(`https://warriorbackend.herokuapp.com/api/sessions`, {
         method: 'POST',
         headers: {
@@ -244,7 +245,7 @@ class App extends Component {
 
 
   handlePlayer = (player) => {
-
+  
     if (player['errors'] === undefined) {
       localStorage.setItem('token', player.token)
       let action = {
