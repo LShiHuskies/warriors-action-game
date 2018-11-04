@@ -62,7 +62,7 @@ class App extends Component {
         type: action
       })
     };
-    fetch(`https://warriorbackend.herokuapp.com/api/moves`, config).then(r=> r.json())
+    fetch(`http://${window.location.hostname}:3000/api/moves`, config).then(r=> r.json())
 
   }
 
@@ -80,7 +80,7 @@ class App extends Component {
       this.props.dispatch(action)
       this.setState({
         login: true,
-        backgroundImage: 'url(https://wallpapertag.com/wallpaper/full/8/d/1/202872-vertical-dbz-background-1920x1080-for-retina.jpg)'
+        backgroundImage: 'url(http://wallpapertag.com/wallpaper/full/8/d/1/202872-vertical-dbz-background-1920x1080-for-retina.jpg)'
       })
     }
 
@@ -91,7 +91,7 @@ class App extends Component {
     if( ((this.props.playerHealth < 1 || this.props.playerTwoHealth < 1) && count < 1) || ( !(this.props.enemyHealth < 1 ) && (this.props.time < 1) && (count < 1) ) ){
       this.setState({
         gameOver: true,
-        backgroundImage: 'url(https://images7.alphacoders.com/315/thumb-1920-315686.jpg)'
+        backgroundImage: 'url(http://images7.alphacoders.com/315/thumb-1920-315686.jpg)'
       })
       count = count + 1
     } else if ( this.props.logout === true && otherCount < 1 ) {
@@ -115,7 +115,7 @@ class App extends Component {
           type: action
         })
       };
-      fetch(`https://warriorbackend.herokuapp.com/api/moves`, config).then(r=> r.json())
+      fetch(`http://${window.location.hostname}:3000/api/moves`, config).then(r=> r.json())
 
       thirdCount = thirdCount + 1;
       scoreCount = 0;
@@ -136,7 +136,7 @@ class App extends Component {
           type: action
         })
       };
-      fetch(`https://warriorbackend.herokuapp.com/api/moves`, config).then(r=> r.json())
+      fetch(`http://${window.location.hostname}:3000/api/moves`, config).then(r=> r.json())
       scoreCount = 0;
 
     } else if ( this.props.enemyHealth < 1 && fifthCount < 1 && fourthCount === 1 && this.props.time < 59 ) {
@@ -154,7 +154,7 @@ class App extends Component {
             type: action
           })
         };
-        fetch(`https://warriorbackend.herokuapp.com/api/moves`, config).then(r=> r.json())
+        fetch(`http://${window.location.hostname}:3000/api/moves`, config).then(r=> r.json())
         scoreCount = 0;
 
     } else if ( this.props.time < 55 && scoreCount < 1 && this.state.gameOver !== true && this.state.login === true ) {
@@ -201,7 +201,7 @@ class App extends Component {
 
       // trying to the link the back end with the front end--
 
-      fetch(`https://warriorbackend.herokuapp.com/api/sessions`, {
+      fetch(`http://${window.location.hostname}:3000/api/sessions`, {
         method: 'POST',
         headers: {
           'Content-Type': "application/json"
@@ -213,7 +213,7 @@ class App extends Component {
 
     } else if (event.target.value === "Create New Account") {
       // need to make a fetch request in order to create a new account
-      fetch(`https://warriorbackend.herokuapp.com/api/users`, {
+      fetch(`http://${window.location.hostname}:3000/api/users`, {
         method: 'POST',
         headers: {
           'Content-Type': "application/json"
@@ -245,11 +245,9 @@ class App extends Component {
 
 
   handlePlayer = (player) => {
-    console.log(player)
+
 
     if (player['errors'] === undefined) {
-
-
       localStorage.setItem('token', player.token)
       let action = {
         type: 'OPERATIONGETPLAYER',
@@ -259,11 +257,10 @@ class App extends Component {
 
         this.setState({
           login: true,
-          backgroundImage: 'url(https://wallpapertag.com/wallpaper/full/8/d/1/202872-vertical-dbz-background-1920x1080-for-retina.jpg)',
+          backgroundImage: 'url(http://wallpapertag.com/wallpaper/full/8/d/1/202872-vertical-dbz-background-1920x1080-for-retina.jpg)',
           username: '',
           password: ''
         })
-
 
     } else if (player['errors'] !== undefined) {
       alert(player['errors'])
@@ -288,7 +285,7 @@ class App extends Component {
 
       this.setState({
         startGame: true,
-        backgroundImage: 'url(https://images7.alphacoders.com/677/thumb-1920-677266.png)'
+        backgroundImage: 'url(http://images7.alphacoders.com/677/thumb-1920-677266.png)'
       })
     } else if (event.scores) {
 
@@ -298,7 +295,7 @@ class App extends Component {
       }
       this.props.dispatch(action)
       this.setState({
-        backgroundImage: 'url(https://images7.alphacoders.com/315/thumb-1920-315686.jpg)',
+        backgroundImage: 'url(http://images7.alphacoders.com/315/thumb-1920-315686.jpg)',
         gameOver: true
       })
     }
@@ -328,7 +325,7 @@ class App extends Component {
       else if (event.type.type === 'RESTORE' ) {
         this.props.dispatch(event.type)
         this.setState({
-          backgroundImage: 'url(https://i.pinimg.com/originals/0f/18/c4/0f18c45e07a7212f4d49e71213833e01.jpg)'
+          backgroundImage: 'url(http://i.pinimg.com/originals/0f/18/c4/0f18c45e07a7212f4d49e71213833e01.jpg)'
         })
       } else if (event.type.type === 'RESTORELEVEL3' ) {
         this.props.dispatch(event.type)
@@ -338,7 +335,7 @@ class App extends Component {
       } else if (event.type.type === 'RESTORELEVEL4') {
         this.props.dispatch(event.type)
         this.setState({
-          backgroundImage: 'url(https://img00.deviantart.net/342f/i/2017/015/a/5/saga_of_freezer___namek_screen_by_saodvd-davkgjo.png)'
+          backgroundImage: 'url(http://img00.deviantart.net/342f/i/2017/015/a/5/saga_of_freezer___namek_screen_by_saodvd-davkgjo.png)'
         })
       }
     }
