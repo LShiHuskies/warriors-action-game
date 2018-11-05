@@ -200,10 +200,7 @@ class App extends Component {
     if (event.target.value === "Login") {
       // trying to the link the back end with the front end--
 
-      https://space-shooter-api.herokuapp.com
-
-    //  https://warriorbackend.herokuapp.com/api/sessions
-      fetch(`https://space-shooter-api.herokuapp.com/users`, {
+      fetch(`https://warriorbackend.herokuapp.com/api/sessions`, {
         method: 'POST',
         headers: {
           'Content-Type': "application/json",
