@@ -246,9 +246,9 @@ class App extends Component {
 
 
   handlePlayer = (player) => {
-    debugger;
-    if (player['errors'] === undefined) {
     
+    if (player['errors'] === undefined) {
+
       localStorage.setItem('token', player.token)
       let action = {
         type: 'OPERATIONGETPLAYER',
