@@ -204,7 +204,8 @@ class App extends Component {
       fetch(`https://warriorbackend.herokuapp.com/api/sessions`, {
         method: 'POST',
         headers: {
-          'Content-Type': "application/json"
+          'Content-Type': "application/json",
+          'Accept': "application/json"
         },
         body: JSON.stringify({username: this.state.username, password: this.state.password})
       })
@@ -247,6 +248,7 @@ class App extends Component {
   handlePlayer = (player) => {
 
     if (player['errors'] === undefined) {
+      debugger;
       localStorage.setItem('token', player.token)
       let action = {
         type: 'OPERATIONGETPLAYER',
