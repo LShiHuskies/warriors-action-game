@@ -200,8 +200,10 @@ class App extends Component {
     if (event.target.value === "Login") {
       // trying to the link the back end with the front end--
 
+      https://space-shooter-api.herokuapp.com
 
-      fetch(`https://warriorbackend.herokuapp.com/api/sessions`, {
+    //  https://warriorbackend.herokuapp.com/api/sessions
+      fetch(`https://space-shooter-api.herokuapp.com/users`, {
         method: 'POST',
         headers: {
           'Content-Type': "application/json",
@@ -246,7 +248,7 @@ class App extends Component {
 
 
   handlePlayer = (player) => {
-    
+
     if (player['errors'] === undefined) {
 
       localStorage.setItem('token', player.token)
