@@ -62,7 +62,7 @@ class App extends Component {
         type: action
       })
     };
-    fetch(`https://warriorbackend.herokuapp.com/api/moves`, config).then(r=> r.json())
+    fetch(`http://${window.location.hostname}:3000/api/moves`, config).then(r=> r.json())
 
   }
 
@@ -115,7 +115,7 @@ class App extends Component {
           type: action
         })
       };
-      fetch(`https://warriorbackend.herokuapp.com/api/moves`, config).then(r=> r.json())
+      fetch(`http://${window.location.hostname}:3000/api/moves`, config).then(r=> r.json())
 
       thirdCount = thirdCount + 1;
       scoreCount = 0;
@@ -136,7 +136,7 @@ class App extends Component {
           type: action
         })
       };
-      fetch(`https://warriorbackend.herokuapp.com/api/moves`, config).then(r=> r.json())
+      fetch(`http://${window.location.hostname}:3000/api/moves`, config).then(r=> r.json())
       scoreCount = 0;
 
     } else if ( this.props.enemyHealth < 1 && fifthCount < 1 && fourthCount === 1 && this.props.time < 59 ) {
@@ -154,7 +154,7 @@ class App extends Component {
             type: action
           })
         };
-        fetch(`https://warriorbackend.herokuapp.com/api/moves`, config).then(r=> r.json())
+        fetch(`http://${window.location.hostname}:3000/api/moves`, config).then(r=> r.json())
         scoreCount = 0;
 
     } else if ( this.props.time < 55 && scoreCount < 1 && this.state.gameOver !== true && this.state.login === true ) {
@@ -200,7 +200,7 @@ class App extends Component {
     if (event.target.value === "Login") {
       // trying to the link the back end with the front end--
 
-      fetch(`https://warriorbackend.herokuapp.com/api/sessions`, {
+      fetch(`http://${window.location.hostname}:3000/api/sessions`, {
         method: 'POST',
         headers: {
           'Content-Type': "application/json",
@@ -213,7 +213,7 @@ class App extends Component {
 
     } else if (event.target.value === "Create New Account") {
       // need to make a fetch request in order to create a new account
-      fetch(`https://warriorbackend.herokuapp.com/api/users`, {
+      fetch(`http://${window.location.hostname}:3000/api/users`, {
         method: 'POST',
         headers: {
           'Content-Type': "application/json"
