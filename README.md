@@ -20,7 +20,10 @@ Please remember to Full Screen your Screen when playing the game.
 
 Have fun working together and good luck!
 
-9. The clip of the project should look like this https://www.youtube.com/watch?v=Ytv4ZeIXPnQ&list=PLk-IEKBQRLf7quNBmnUb1vsDWr6vMQzkz.
+A. The clip of the project should look like this [Z Warriors Action Game DEMO](https://www.youtube.com/watch?v=Ytv4ZeIXPnQ&list=PLk-IEKBQRLf7quNBmnUb1vsDWr6vMQzkz).
+
+Please be advised that you can play live on [Heroku](https://intense-waters-55861.herokuapp.com/).
+Please be advised that if you wish to play locally, you can switch over to the local branch and simply follow the instructions. [Z Warriors Action Game Local Branch](https://github.com/LShiHuskies/warriors-action-game/tree/local) and [Z Warriors Action Game API Local Branch](https://github.com/LShiHuskies/WarriorsBackEnd/tree/local).
 
 # How to Install & Run Program
 1. Fork and clone this repository to your local environment.
